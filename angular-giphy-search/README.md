@@ -13,5 +13,5 @@ limit the returned number of gifs and use UI elements or browser events to displ
 GIPHY api key to use:  4s8JFJyLgoLSgBXiEczjymJ6sGNNYSdW \
 GIPHY end point:       https://api.giphy.com/v1/gifs/search
 
-
+![image info](https://github.com/agentisenergy/code-challenge-front-end/blob/master/angular-giphy-search/example.png)
 
