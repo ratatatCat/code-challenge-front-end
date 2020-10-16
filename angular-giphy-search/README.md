@@ -1,6 +1,7 @@
 
 # GiphySearch
-
+create a simple page with a functional search box that displays the gifs returned from giphy below it.
+limit the returned number of gifs and use UI elements or browser events to display more.
   
 
 ## Running Locally
@@ -18,14 +19,6 @@ The app folder has been wiped out, you will need to create your app structure an
   
 
 ## Info on Implementation
-
-  
-
-create a simple page with a functional search box that displays the gifs returned from giphy below it.
-
-limit the returned number of gifs and use UI elements or browser events to display more.
-
-  
 
 use the GIPHY API and NOT the SDK. the following API information should be enough to complete this exercise. 
 
@@ -45,5 +38,9 @@ use the GIPHY API and NOT the SDK. the following API information should be enoug
    ratings.,
  - **lang:** Specify default language for regional content; use a 2-letter ISO 639-1 language code.
 
+## Other Considerations
+treat this as if it were going to be a reusable component in a production piece and divide the work between services, modules, interfaces, directives, components as needed. 
+
+bonus points if the unit tests pass!
 
 ![image info](https://github.com/agentisenergy/code-challenge-front-end/blob/master/angular-giphy-search/example.png)
