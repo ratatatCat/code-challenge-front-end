@@ -28,6 +28,7 @@ export class SearchComponent implements OnInit {
   performSearch(searchTerm: any): void {
     this.giphyImages = [];
     this.searchTerm = searchTerm.searchResult;
+    this.searchPos = 0;
 
     this.getImages();
   }
@@ -50,9 +51,11 @@ export class SearchComponent implements OnInit {
   getImages() {
     this.giphyService.getImages(this.searchTerm, this.searchPos).subscribe((res: any) => {
       console.log(res);
-      this.searchPos =+ res.data.length;
+      console.log(this.searchPos);
       if(this.giphyImages.length > 0) {
         res.data.forEach(image => {
+          this.searchPos += res.data.length;
+          console.log(this.searchPos);
           this.giphyImages.push(image);
         });;
       } else {
