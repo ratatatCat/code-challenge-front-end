@@ -40,7 +40,7 @@ export class SearchComponent implements OnInit {
     let pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
     let max = document.documentElement.scrollHeight;
 
-    if(pos == max )   {
+    if(pos > max - 5 )   {
       if(this.giphyImages.length > 0) {
         this.getImages();
       }
