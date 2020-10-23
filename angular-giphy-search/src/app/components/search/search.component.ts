@@ -26,13 +26,10 @@ export class SearchComponent implements OnInit {
    * @param searchTerm - Search input
    */
   performSearch(searchTerm: any): void {
+    this.giphyImages = [];
     this.searchTerm = searchTerm.searchResult;
 
-    this.giphyService.getImages(this.searchTerm, this.searchPos).subscribe((res: any) => {
-      console.log(res);
-      this.searchPos =+ res.data.length;
-      this.giphyImages = res.data;
-    });;
+    this.getImages();
   }
 
   /**
@@ -45,13 +42,22 @@ export class SearchComponent implements OnInit {
 
     if(pos == max )   {
       if(this.giphyImages.length > 0) {
-        this.giphyService.getImages(this.searchTerm, this.searchPos).subscribe((res: any) => {
-          console.log(res);
-          res.data.forEach(image => {
-            this.giphyImages.push(image);
-          });;
-        });;
+        this.getImages();
       }
     }
+  }
+
+  getImages() {
+    this.giphyService.getImages(this.searchTerm, this.searchPos).subscribe((res: any) => {
+      console.log(res);
+      this.searchPos =+ res.data.length;
+      if(this.giphyImages.length > 0) {
+        res.data.forEach(image => {
+          this.giphyImages.push(image);
+        });;
+      } else {
+        this.giphyImages = res.data;
+      }
+    });;
   }
 }
