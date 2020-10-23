@@ -1,7 +1,7 @@
-<form>
+<form [formGroup]="searchForm" (ngSubmit)="performSearch(searchForm.value)">
     <mat-form-field>
-        <input matInput #giphySearch>
-        <button>
+        <input matInput formControlName="searchResult">
+        <button type="submit">
             <mat-icon>search</mat-icon>
         </button>
     </mat-form-field>

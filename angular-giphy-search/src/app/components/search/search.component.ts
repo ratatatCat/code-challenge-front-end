@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GiphyService } from '../../services/giphy.service';
+
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
+  searchForm = new FormGroup({
+    searchResult: new FormControl()
+}); 
 
-  constructor() { }
+  constructor(private giphyService: GiphyService) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  performSearch(searchTerm: any): void {
+    this.giphyService.getImages(searchTerm.searchResult);
   }
-
 }
