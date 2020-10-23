@@ -16,8 +16,6 @@ export class GiphyService {
   getImages(searchTerm: string) {
     let params = this.params.set('q', searchTerm);
 
-    return this.http.get(`${this.apiUrl}`, {params: params}).subscribe((res: Response) => {
-      console.log(res);
-    });
+    return this.http.get(`${this.apiUrl}`, {params: params});
   }
 }

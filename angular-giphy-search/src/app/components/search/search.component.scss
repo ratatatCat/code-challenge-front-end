@@ -1,7 +1,18 @@
+#searchPage {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+}
+
+#giphyImages {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 form {
   display: flex;
   flex-direction: column;
-  width: 730px;
+  width: 100%;
   margin: auto;
 }
 
@@ -12,7 +23,6 @@ button {
   width: 30px;
   height: 30px;
   text-align: center;
-  float: right;
 }
 
 mat-icon {
@@ -22,12 +32,21 @@ mat-icon {
 }
 
 input {
-  width: 700px;
+  width: 1750px;
   height: 30px;
   background-color: white;
   margin-top: 0;
+  text-align: left;
 }
 
 ::ng-deep .mat-form-field-underline {
   display: none;
+}
+
+mat-form-field {
+  text-align: center;
+}
+
+img {
+  padding: 10px;
 }

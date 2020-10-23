@@ -13,11 +13,16 @@ export class SearchComponent implements OnInit {
     searchResult: new FormControl()
 }); 
 
+  giphyImages: any;
+
   constructor(private giphyService: GiphyService) { }
 
   ngOnInit() { }
 
   performSearch(searchTerm: any): void {
-    this.giphyService.getImages(searchTerm.searchResult);
+    this.giphyService.getImages(searchTerm.searchResult).subscribe((res: any) => {
+      console.log(res);
+      this.giphyImages = res.data;
+    });;
   }
 }
