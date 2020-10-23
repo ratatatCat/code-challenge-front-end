@@ -4,9 +4,9 @@
   padding-top: 10px;
 }
 
-#giphyImages {
-  display: flex;
-  flex-wrap: wrap;
+.giphyImage {
+  position: relative;
+  float: left;
 }
 
 form {
