@@ -13,6 +13,11 @@ export class GiphyService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * Get images using Giphy API
+   * @param searchTerm - Search term from input
+   * @param searchPos - Offset for image number position
+   */
   getImages(searchTerm: string, searchPos: number) {
     let params = this.params.set('q', searchTerm).set('offset', searchPos.toString());
 

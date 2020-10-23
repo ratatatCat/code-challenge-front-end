@@ -21,6 +21,10 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() { }
 
+  /**
+   * Retrieve Giphy Images based on searchTerm.
+   * @param searchTerm - Search input
+   */
   performSearch(searchTerm: any): void {
     this.searchTerm = searchTerm.searchResult;
 
@@ -31,6 +35,9 @@ export class SearchComponent implements OnInit {
     });;
   }
 
+  /**
+   * Retrieve more images when scroll to the bottom.
+   */
   @HostListener("window:scroll", ["$event"])
   onWindowScroll() {
     let pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
